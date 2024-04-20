@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        var     will be hoisted to object
+        let     will be hoisted to TDZ
+        const   will be hoisted to TDZ
+                must be assigned
+                once assigend you can not change
+        */
+        var hero = {
+            title : "Ironman",
+            power : 6
+        };
+        function checkPower(){
+            if(hero.power > 5){
+               let tempTitle = hero.title;// TDZ
+               console.log(tempTitle);/// ???? 
+               hero.title = tempTitle+" is strong";
+            }
+        };
+        
+        checkPower();
+        console.log(hero.title);/// ??? 
+
+       /*  
+        for(let i = 0; i < 100; i++){
+            console.log(i);
+        };
+
+        console.log("value of i out of loop",i); 
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

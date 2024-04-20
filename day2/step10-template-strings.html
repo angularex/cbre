@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data = [
+            {
+                title : "Batman",
+                firstname : "Bruce",
+                lastname : "Wayne",
+                power : 7,
+                city : "Gotham"
+            },
+            {
+                title : "Superman",
+                firstname : "Clark",
+                lastname : "Kent",
+                power : 10,
+                city : "Metropolis"
+            },
+            {
+                title : "Wonder Women",
+                firstname : "Princess",
+                lastname : "Diana",
+                power : 9,
+                city : "Amazona"
+                
+            },
+            {
+                title : "Flash",
+                firstname : "Barry",
+                lastname : "Allan",
+                power : 6,
+                city : "New York"
+                
+            }
+        ];
+        function init(){
+            for(let i = 0; i < data.length; i++){
+                // document.querySelector(".container").innerHTML += "<div class='box'><h1>Title : "+data[i].title+"</h1> <h2>FullName : "+data[i].firstname+" "+data[i].lastname+"</h2> <h3>Power is : "+data[i].power+"</h3> </div>"
+                document.querySelector(".container").innerHTML += `
+                <div class="box">
+                    <h1>Title : ${data[i].title}</h1> 
+                    <h2>FullName : ${data[i].firstname+" "+ data[i].lastname}</h2>
+                    <h3>Power is : ${data[i].power}</h3> 
+                    <h3>From : ${data[i].city}</h3> 
+                </div>
+                `
+            }
+        }
+        document.addEventListener("DOMContentLoaded", init)
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>

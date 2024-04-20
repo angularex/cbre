@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var hero = {
+            title : "Ironman",
+            firstname : "Tony",
+            lastname : "Stark",
+            power : 7
+        };
+
+//      Objects are assigned as references 
+        // var secondHero = hero;
+        // console.log(secondHero.title);// ??? Ironman
+        // console.log(hero.title);// ??? Ironman
+        
+        // secondHero.title = "Ironmonger";
+        // console.log(secondHero.title);// ??? ironmonger
+        // console.log(hero.title);// ??? ironman
+
+       /*  
+       var secondHero = {};
+            secondHero.title = hero.title;
+        console.log(secondHero.title);
+        console.log(hero.title);
+        secondHero.title = "Ironmonger";
+        console.log(secondHero.title);
+        console.log(hero.title); 
+        */
+// Destructuring in ES3
+/* 
+var herotitle = hero.title;
+var herofirstname = hero.firstname;
+var herolastname = hero.lastname;
+var heropower = hero.power;
+
+       console.log(herotitle, hero.title);
+       herotitle = "Ironmonger";
+       console.log(herotitle, hero.title); 
+       */
+// Destructuring in ES3
+/* 
+var herotitle = hero.title,
+herofirstname = hero.firstname,
+herolastname = hero.lastname,
+      heropower = hero.power;
+      console.log(herotitle, hero.title);
+      herotitle = "Ironmonger";
+      console.log(herotitle, hero.title); 
+      */
+     
+// Destructuring in ES6
+/*  var {
+        title : herotitle, 
+        firstname : herofirstname, 
+        lastname : herolastname, 
+        power : heropower
+    } = hero;
+    console.log(herotitle, hero.title);
+    herotitle = "Ironmonger";
+    console.log(herotitle, hero.title);  */
+
+    let avengers = ["Ironman", "Hulk", "Thor"];
+    let [firsthero, secondhero, thirdhero] = avengers;
+
+    console.log(avengers[0]);
+    console.log(firsthero);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

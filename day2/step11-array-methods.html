@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var favNums = [10,86,72,97,45,77,24,77];
+        /* 
+        var doubleFavNums = [];
+
+        for(var i = 0; i < favNums.length; i++){
+            doubleFavNums.push(favNums[i] * 2);
+        };
+
+        console.log(favNums);
+        console.log(doubleFavNums); 
+        */
+       /* 
+        for(var i = 0; i < favNums.length; i++){
+           console.log(favNums[i]);
+        };
+       */
+      /* favNums.forEach(function(val,idx,arr){
+        console.log("value is ",val);
+        console.log("index is ",idx);
+        console.log("array ",arr);
+      }) */
+      // favNums.forEach( val => console.log(val) );
+      /* 
+      favNums.forEach(val => doubleFavNums.push(val*2));
+      console.log(favNums);
+      console.log(doubleFavNums); 
+      */
+     /*
+     var doubleFavNums = favNums.map(val => val * 2);
+     console.log(favNums);
+     console.log(doubleFavNums); 
+     */
+    // forEach, map, filter
+
+    /* 
+    var lessThan50 = favNums.filter(function(val,idx,arr){
+        return val < 50;
+    });
+
+    console.log(lessThan50); 
+    */
+    /*
+    let everyValLessThan100 = favNums.every(function(val){
+        return val < 100;
+    });
+    
+    console.log(everyValLessThan100);
+    */
+    /*     
+    let everyValLessThan50 = favNums.every(function(val){
+        console.log("everyValLessThan50 was called for ", val);
+        return val < 50;
+    });
+    
+    console.log(everyValLessThan50);
+     */
+/*     let someValLessThan50 = favNums.some(function(val){
+        console.log("someValLessThan50 was called for ", val);
+        return val < 50;
+    });
+    
+    console.log(someValLessThan50); */
+
+    /*
+    var total = 0;
+
+    for(let i = 0; i < favNums.length;i++){
+        total += favNums[i];
+    };
+
+    console.log(total); 
+    */
+
+    /* 
+    var total = favNums.reduce(function(initVal, val, idx, arr){
+        return initVal+val;
+    }, 0); 
+    */
+   /*
+   var total = favNums.reduceRight((initVal, val) => {
+       console.log(val);
+       return initVal+val
+    }, 0);
+    
+    console.log(total);
+    */
+    /* 
+    console.log(favNums.indexOf(77,6));
+    console.log(favNums.lastIndexOf(77)); 
+    */
+
+    /* 
+    from the following array 
+    var favNums = [10,86,72,97,45,77,24,77];
+    find the sum of all values that are greater than 50
+    */
+
+    let total = favNums
+    .filter(val => val > 50)
+    .reduce((initval,val)=> initval + val,0)
+    console.log(total)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

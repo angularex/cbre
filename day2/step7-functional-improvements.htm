@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*   
+        function adder(num1, num2){
+            return num1 + num2;
+        }; 
+        */
+
+        // console.log(adder(5,6));// 11 
+        /* 
+        function adder(num1, num2){
+            var temp1 = num1 || 0;
+            var temp2 = num2 || 0;
+            return temp1 + temp2;
+        }; 
+        */
+        // ES6 Default Parameters
+        /* 
+        function adder(num1 = 0, num2 = 0){
+            return num1 + num2;
+        };
+        console.log(adder(5));// ??? 
+        */
+
+// ES3
+       /*  function adder(){
+            var total = 0;
+            for(let i = 0; i < arguments.length; i++){
+                total += arguments[i];
+            }
+            return total;
+        };  */
+        // ES5 
+        // REST arguments
+        /* 
+        function adder(compname, ...args){
+            var total = 0;
+            for(let i = 0; i < args.length; i++){
+                total += args[i];
+            }
+            return total+" : "+compname;
+        }; 
+        console.log(adder("CBRE",5));// NaN
+        console.log(adder("CBRE",5,6)); // 11
+        console.log(adder("CBRE",5,6,7)); // 11
+        console.log(adder("CBRE",5,6,7,8)); // 11
+        console.log(adder("CBRE",5,6,7,8,9)); // 11
+        console.log(adder("CBRE",5,6,7,8,9,10)); // 11 
+        */
+        function adder(...args){
+            var total = 0;
+            for(let i = 0; i < args.length; i++){
+                total += args[i];
+            }
+            return total;
+        }; 
+        var vals = [5,6,7,8,9,10];
+        // console.log(adder(vals[0], vals[1], vals[2], vals[3], vals[4], vals[5])); // 11 
+        // Spread syntax 
+        console.log(adder(...vals)); // 11 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        var obj1 = {};
+        var obj2 = new Object();
+        var obj3 = Object.create(null);
+        console.log(typeof obj1, typeof obj2, typeof obj3);
+        */
+
+       /* 
+       var hero = {
+        title : "Ironman",
+        firstname : "Tony",
+        lastname : "Stark",
+        city : "New York"
+       };
+
+       console.log(hero.title);
+       hero.title = "IronMonger";
+       console.log(hero.title); 
+       */
+
+       var avenger = {
+        title : "Ironman",
+        firstname : "Tony",
+        lastname : "Stark",
+        city : "New York"
+       };
+
+       let hero = Object.create(null);
+       Object.defineProperty(hero,"title",{ value : "Ironman", writable : true })
+       Object.defineProperty(hero,"firstname",{ value : "Tony" })
+       Object.defineProperty(hero,"lastname",{ value : "Stark" })
+       Object.defineProperty(hero,"city",{ value : "New York", writable : true, enumerable : true })
+       /*        
+       console.log(hero.title);
+       hero.title = "IronMonger";
+       console.log(hero.title); 
+       console.log(hero.city);
+       hero.city = "Hyderabad";
+       console.log(hero.city);  
+       */
+
+       /* 
+       for(prop in avenger){
+        console.log("property found ", prop, avenger[prop])
+       } 
+       */
+       console.log(hero.city);  
+       hero.city = "Hyderabad";
+       console.log(hero.city);  
+       for(prop in hero){
+        console.log("property found ", prop, hero[prop])
+       };
+       hero.title = "Iron Monger";
+       console.log(hero.city, hero.title); 
+       Object.defineProperty(hero,"city",{ writable : false });
+       hero.city = "Noida";
+       Object.defineProperty(hero,"title",{ writable : false });
+       hero.title = "IronMan";
+       console.log(hero.city, hero.title); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

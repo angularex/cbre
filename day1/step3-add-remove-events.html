@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 800px;
+            height: 400px;
+            background-color: silver;
+            border: 1px solid grey;
+            margin: auto;
+            overflow: auto;
+        }
+        .container .box{
+            width: 100px;
+            height: 100px;
+            background-color: darkolivegreen;
+            border: 1px solid grey;
+            margin: 10px;
+            color: azure;
+            font-size: 40px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+        }
+    </style>
+    <script>
+        var count = 1;
+        function addBoxHandler(){
+            // console.log("add box handler was called");
+            var box = document.createElement("div");
+                box.setAttribute("class","box");
+                box.textContent = count;
+            document.getElementsByClassName("container")[0].appendChild(box);
+            count++;
+        }
+        function stopAddingBoxHandler(){
+            // console.log("stop add box handler was called");
+            document.getElementsByTagName("button")[0].removeEventListener("click", addBoxHandler);
+        }
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click", addBoxHandler);
+            document.getElementsByTagName("button")[1].addEventListener("click", stopAddingBoxHandler);
+        };
+        document.addEventListener("DOMContentLoaded", init)
+    </script>
+</head>
+<body>
+    <button>Add box</button>
+    <button>Stop Adding box</button>
+    <div class="container"></div>
+</body>
+</html>

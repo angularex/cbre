@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var firstjusticeleague = {
+        "id": "1",
+        "name": "Batman",
+        "powerstats": {
+          "intelligence": "100",
+          "strength": "26",
+          "speed": "27",
+          "durability": "50",
+          "power": "47",
+          "combat": "100"
+        },
+        "biography": {
+          "full-name": "Bruce Wayne",
+          "place-of-birth": "Crest Hill, Bristol Township; Gotham County",
+          "publisher": "DC Comics",
+          "release-date": "6/19/1989",
+          "earning": "41.13",
+          "budget": "3.5"
+        },
+        "appearance": {
+          "gender": "Male",
+          "race": "Human",
+          "height": [
+            "6'2",
+            "188 cm"
+          ],
+          "weight": [
+            "210 lb",
+            "95 kg"
+          ],
+          "eye-color": "blue",
+          "hair-color": "black"
+        },
+        "work": {
+          "occupation": "Businessman",
+          "base": "Batcave, Stately Wayne Manor, Gotham City; Hall of Justice, Justice League Watchtower"
+        },
+        "image": {
+          "url": "images/batman.jpg"
+        }
+      };
+
+    /* prefer */
+    /*  
+      var hero1 = JSON.parse(JSON.stringify(firstjusticeleague));
+      console.log(hero1.name, firstjusticeleague.name);
+      hero1.name = "Joker"
+      console.log(hero1.name, firstjusticeleague.name);
+    */
+   
+    var hero1 = {...firstjusticeleague, };
+    console.log(hero1.name, firstjusticeleague.name);
+    hero1.name = "Joker"
+    console.log(hero1.name, firstjusticeleague.name);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
