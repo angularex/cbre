@@ -1,41 +1,43 @@
-class Person{
-    canwalk;
-    constructor(cw:string){
-        this.canwalk = cw;
+
+interface IPerson{
+    canwalk:string;
+    createDate:Date;
+}
+
+interface IHero{
+    firstname:string;
+    lastname:string;
+    age:number;
+    fullname():string;
+    getpower():number;
+    setpower(npower:number):void;
+}
+
+class Person implements IPerson{
+    createDate: Date = new Date();
+    constructor(public canwalk:string){
+        // empty
     }
 }
-class Hero extends Person{
+class Hero extends Person implements IHero{
     // properties
-    static version = 1001;
-    firstname = "default";
-    lastname = "default";
-    age = 0;
-    #power = 0
-    constructor(fname:string, lname:string, hcw:string){
+    static version:number = 1001;
+    age:number = 0;
+    private power:number = 0
+    constructor(public firstname:string, public lastname:string, hcw:string){
         super(hcw);
-        this.firstname = fname;
-        this.lastname = lname;
     };
     // methods
-    fullname(){
+    fullname():string{
         return this.firstname+" "+this.lastname;
     }
     #setage(){
         this.age = 25;
     }
-    get power(){
-        return this.#power;
+    getpower():number{
+        return this.power;
     }
-    set power(npower){
-        this.#power = npower;
+    setpower(npower:number):void{
+        this.power = npower;
     }
 }
-let hero1 = new Hero("Tony","Stark","I Can Fly");
-console.log(hero1.firstname, hero1.lastname);// 
-console.log(hero1.fullname());// 
-// setter
-hero1.power = 6;
-// getter
-console.log(hero1.power);// 
-console.log(hero1.canwalk);// 
-console.log(Hero.version)

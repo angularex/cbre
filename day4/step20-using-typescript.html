@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="src/two.js"></script>
+    <script src="script/classes.js"></script>
+    <script>
+        let hero1 = new Hero("Tony","Stark","I Can Fly");
+        console.log(hero1.firstname, hero1.lastname);// 
+        console.log(hero1.fullname());// 
+        // setter
+        hero1.power = 6;
+        // getter
+        console.log(hero1.power);// 
+        console.log(hero1.canwalk);// 
+        console.log(Hero.version);
+        console.log(hero1.createDate);
+    </script>
 </head>
 <body>
     

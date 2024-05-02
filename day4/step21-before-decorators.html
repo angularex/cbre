@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Before Decorators</title>
+    <script>
+        // higher order function
+        /* 
+        function composition(arg1, arg2){
+            return function(val){
+                return( arg1( arg2(val) ) );
+            }
+        };
+        function fun1(num){
+            return num + num;
+        };
+        function fun2(num){
+            return num * num;
+        };
+        
+        console.log(composition(fun1, fun2)(5))// 50
+        */
+        
+        // decorator
+        /* let addPower = function(npower){
+            return function(originalObject){
+                return{
+                    title : originalObject.title,
+                    power : npower
+                }
+            }
+        };
+
+        let commonman = {
+            title : "Batman"
+        }; */
+
+       /*  
+        let heroInMaking = addPower(6);
+        console.log(heroInMaking(commonman)); 
+        */
+
+       /*  
+       commonman = addPower(6)(commonman);
+       console.log(commonman); 
+       */
+
+       let addPower = function(npower){
+            return function(TargetClass){
+                let tc = new TargetClass()
+                return class {
+                    title = tc.title;
+                    power =  npower
+                }
+            }
+        };
+
+        class Commonman {
+            title = "Batman";
+        };
+
+       /*  
+        let heroInMaking = addPower(6);
+        console.log(heroInMaking(commonman)); 
+        */
+
+        Commonman = addPower(6)(Commonman);
+        let cm = new Commonman();
+        console.log(cm.title, cm.power);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
