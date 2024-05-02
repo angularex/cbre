@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var person = Object.create(null);
+        Object.defineProperties(person, {
+            canwalk: {
+                value: "I Can Walk"
+            },
+            power: {
+                value: 1
+            }
+        })
+        var hero = Object.create(person);
+        Object.defineProperties(hero, {
+            title: { value: "Ironman", writable: true },
+            titleAccess: {
+                get: function () {
+                    return this.title;
+                },
+                set: function (ntitle) {
+                    this.title = ntitle;
+                }
+            },
+            firstname: { value: "Tony" },
+            lastname: { value: "Stark" },
+            city: { value: "New York", writable: true, enumerable: true, configurable: true }
+        });
+        console.log(hero.canwalk);
+        console.log(hero.power);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <script>
+        var favNums = [10,86,72,97,45,77,24,77];
+        let promise = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                if(true){
+                    resolve(favNums)
+                }else{
+                    reject("Reject message")
+                }
+            },2000)
+        });
+
+        promise
+        .then(function(res){
+            // console.log("Promise is Resolved",res);
+            res.forEach(function(val){
+                document.getElementById('allFavNums').innerHTML+=`<li>${ val }</li>`
+            });
+            // console.log(res)
+            return {filtered : res.filter(val => val > 50), original : res}
+        })
+        .then(function(res){
+            // console.log("Promise is Resolved",res);
+            res.filtered.forEach(function(val){
+                document.getElementById('favNumsGt50').innerHTML+=`<li>${ val }</li>`
+            })
+            // console.log(res)
+            return {reduced : res.filtered.reduce((initVal, val)=> initVal+val,0), original : res.original  }
+        })
+        .then(function(res){
+            // console.log("Promise is Resolved",res);
+            console.log(res)
+            document.getElementById('total').textContent = res.reduced;
+            document.getElementById('o_total').textContent = res.original.reduce((initval,val) => initval+val ,0);
+        })
+        .catch(function(err){
+            console.log("Promise is Rejected",err)
+        })
+        .finally(function(){
+            console.log("Promise is now settled")
+        })
+
+    </script>
+</head>
+<body>
+    <h1>Promise</h1>
+    <ol id="allFavNums"></ol>
+    <ol id="favNumsGt50"></ol>
+    <h2>Total is : <span id="total"></span></h2>
+    <h2>Original Total is : <span id="o_total"></span></h2>
+</body>
+</html>
