@@ -1,0 +1,5 @@
+npm i -g typescript 
+
+to access typescript use  : tsc 
+
+tsc ./src/one.ts --outFile ./script/one.js 

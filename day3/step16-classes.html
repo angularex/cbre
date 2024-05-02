@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // ES3
+        function Hero(fname, lname){
+            this.firstname = fname;
+            this.lastname = lname;
+        };
+        Hero.prototype.fullname = function(){
+            return this.firstname+" "+this.lastname;
+        }
+        let hero1 = new Hero("Tony","Stark");
+        console.log(hero1.firstname, hero1.lastname);// 
+        console.log(hero1.fullname());// 
+
+        console.log("########### NEXT HERO ##############");// 
+        
+        let hero2 = new Hero("Peter","Parker");
+        console.log(hero2.firstname, hero2.lastname);// 
+        console.log(hero2.fullname());// 
+
+        console.log("########### method instances ##############");// 
+
+        console.log(hero1.fullname === hero2.fullname);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
